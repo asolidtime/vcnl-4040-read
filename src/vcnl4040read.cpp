@@ -39,7 +39,9 @@ void setup()
   Serial.begin(9600);
   Wire.begin();
   Wire.setClock(400000);
-  Blynk.begin("QnAwxbXEtUAXJ_pHkObTkMagiLke5zMZ", IPAddress(167, 172, 234, 162), 8080);
+  Blynk.begin("QnAwxbXEtUAXJ_pHkObTkMagiLke5zMZ", IPAddress(167, 172, 234, 162), 8080); // sharing API keys and the IP addresses they correspond to on a public git repo!!!! WOOHOO!!!!
+  // I mean it's probably fine
+  
 
   if (proximitySensor.begin() == false)
   {
@@ -48,6 +50,7 @@ void setup()
       ; // Freeze!
   }
   display.setup();
+  proximitySensor.powerOnAmbient();
 
   display.clearDisplay();
   display.fillScreen(WHITE);
